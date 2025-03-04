@@ -1,0 +1,10 @@
+# Ignore config files with secrets
+config.json
+
+# Ignore Python virtual environment
+venv/
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
