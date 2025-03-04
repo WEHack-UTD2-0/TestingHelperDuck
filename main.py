@@ -13,8 +13,20 @@ logging.basicConfig(level=logging.INFO)
 
 logger = logging.getLogger('nextcord')
 
-with open('config.json') as jsonfile:
-    config = json.load(jsonfile)
+# with open('config.json') as jsonfile:
+#     config = json.load(jsonfile)
+import os
+
+config = {
+    "DB_FILE": os.getenv("DB_FILE", "database.db"),  # Default to "database.db" if not set
+    "API_TOKEN": os.getenv("API_TOKEN"),
+    "MENTOR_CHANNEL_ID": os.getenv("MENTOR_CHANNEL_ID"),
+    "HELP_CHANNEL_ID": os.getenv("HELP_CHANNEL_ID"),
+    "GUILD_ID": os.getenv("GUILD_ID"),
+    "MENTOR_ROLE_ID": os.getenv("MENTOR_ROLE_ID"),
+    "ORGANIZER_ROLE_ID": os.getenv("ORGANIZER_ROLE_ID")
+}
+
 
 bot = nc_cmd.Bot()
 
