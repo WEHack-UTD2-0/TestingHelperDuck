@@ -1,5 +1,3 @@
-#TODO: add types
-
 import nextcord as nc
 from nextcord.ext import commands as nc_cmd
 import nextcord.utils as nc_utils
@@ -7,6 +5,7 @@ from nextcord.ext import application_checks as nc_app_checks
 
 import logging
 import sqlite3 as sql
+import os
 import json
 
 logging.basicConfig(level=logging.INFO)
@@ -15,7 +14,7 @@ logger = logging.getLogger('nextcord')
 
 # with open('config.json') as jsonfile:
 #     config = json.load(jsonfile)
-import os
+
 
 config = {
     "DB_FILE": os.getenv("DB_FILE", "database.db"),  # Default to "database.db" if not set
