@@ -542,5 +542,5 @@ async def leaderboard(ctx: nc.Interaction) -> None:
 
             await ctx.send('An unknown error has occured. Please contact a HackKU organizer.', ephemeral=True)
 #1}}}
-
+print(f"DEBUG: API_TOKEN={config['API_TOKEN']}")
 bot.run(config['API_TOKEN'])
