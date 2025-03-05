@@ -35,11 +35,11 @@ db_connection = sql.connect(config['DB_FILE'])
 async def on_ready():
     logging.info(f'We have logged in as {bot.user}')
     try:
-        bot.tree.clear_commands(guild=None)  # Clears previous command cache
-        synced = await bot.sync_commands()
+        synced = await bot.sync_commands()  # Syncs all commands
         logging.info(f"Synced {len(synced)} commands globally.")
     except Exception as e:
         logging.error(f"Failed to sync commands: {e}")
+
 
 @bot.event
 async def on_application_command_error(ctx: nc.Interaction, err: Exception):
