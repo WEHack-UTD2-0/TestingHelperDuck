@@ -35,8 +35,8 @@ db_connection = sql.connect(config['DB_FILE'])
 async def on_ready():
     logging.info(f'We have logged in as {bot.user}')
     try:
-        synced = await bot.sync_commands()  # Syncs all commands
-        logging.info(f"Synced {len(synced)} commands globally.")
+        await bot.register_application_commands()  # Correct method for Nextcord
+        logging.info(f"Successfully registered slash commands!")
     except Exception as e:
         logging.error(f"Failed to sync commands: {e}")
 
